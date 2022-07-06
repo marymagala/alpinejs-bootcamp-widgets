@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="wordLength_widgets.js"defer></script>
-    <script src="shortestWord_widgets.js"defer></script>
-    <script src="longestWord_widgets.js"defer></script>
-    <script src="totalPhoneBill_widgets.js"defer></script>
-    <script src="whichShift_widgets.js"defer></script>
-    <script src="greet_widgets.js"defer></script>
+    <script src="wordLength_widgets.js" defer></script>
+    <script src="shortestWord_widgets.js" defer></script>
+    <script src="longestWord_widgets.js" defer></script>
+    <script src="totalPhoneBill_widgets.js" defer></script>
+    <script src="whichShift_widgets.js" defer></script>
+    <script src="greet_widgets.js" defer></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Document</title>
     <script src="greet.js"></script>
-    
+
     <script src="which_shift.js"></script>
     <script src="total_Phone_Bill.js"></script>
     <script src="longestWord.js"></script>
@@ -21,126 +22,163 @@
     <script src="word_length.js"></script>
 </head>
 <style>
-  .widgets{
-    display: flex;
+    .totalPhoneBillWidgets {
+        border: 2px solid;
+        padding: 4em;
+        margin: 4em;
+        border-radius: 1em;
+        background-color: darkslategray;
+
+    }
+
+    .widgets {
+        display: flex;
     }
     
-        
-        .secondContainer{
-            display: flex;
-            border: 2px solid;
-            padding: 1em;
-           border-radius: 1em;
-            background-color: darkslategray
-        }
-        .greetWidget{
-            border: 2px solid;
-            padding: 4em;
-           margin: 4em;
-            border-radius: 1em;
-            background-color: darkslategray; 
-        }
 
-        .whichShiftWidget{ border: 2px solid;
-            padding: 4em;
-           margin: 4em;
-            border-radius: 1em;
-            background-color: darkslategray; 
+    .wordGames {
+        border: 2px solid;
+        padding: 4em;
+        margin: 4em;
+        border-radius: 1em;
+        background-color: darkslategray;
+    }
 
-        }
-    body{
+    .secondContainer {
+        display: flex;
+        /* border: 2px solid;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: dimgray */
+    }
+
+    .greetWidget {
+        border: 2px solid;
+        padding: 4em;
+        margin: 4em;
+        border-radius: 1em;
+        background-color: darkslategray;
+    }
+
+    .whichShiftWidget {
+        border: 2px solid;
+        padding: 4em;
+        margin: 4em;
+        border-radius: 1em;
+        background-color: darkslategray;
+
+    }
+
+    body {border: 2px solid;
+        padding: 4em;
+        margin: 4em;
+        border-radius: 1em;
         background-color: dimgray;
     }
 
-    h1{
-       text-align: center;
+    h1 {
+        text-align: center;
     }
 
-
+   
 </style>
 
 <body>
 
-    <div><h1>AlpineJS widgets for Bootcamp functions</h1></div>
-<div class="widgets">
-    <div class="greetWidget">
-    <div x-data="greetWidget">
-    
-        <h2>Greet widgets</h2>
-        <div class="message" x-text="message">display a message</div>
-        <div>
-            <label for="name"><b>Please write your name</b></label>
-            <input type="text" x-model="name" id="name" >
-        <button @click="greetMe"><b>Greet!</b></button>
-        </div>
+    <div>
+        <h1>AlpineJS widgets for Bootcamp functions</h1>
     </div>
-    </div>
+    <div class="widgets">
+        <div class="greetWidget">
+            <div x-data="greetWidget">
 
-    <div x-data="whichShiftWidget">
-     <div class="whichShiftWidget">
-    <h2>Transport Fee widgets</h2>
-    <div class="amount" x-text="amount">display the amount</div>
-        <div>
+                <h2>Greet widgets</h2>
+                <div class="message" x-text="message">display a message</div>
+                <div>
+                    <label for="name"><b>Please write your name</b></label>
+                    <input type="text" x-model="name" id="name">
+                    <button @click="greetMe"><b>Greet!</b></button>
+                </div>
+            </div>
+        </div>
+
+        <div x-data="whichShiftWidget">
+            <div class="whichShiftWidget">
+                <h2>Transport Fee widgets</h2>
+                <div class="amount" x-text="amount">display the amount</div>
+                <!-- <div>
            <label for="workingShift"><b>Please display your working shift</b></label>
            <input type="text" x-model="workingShift" id="workingShift">
            <button @click="transportAmount">Price!</button>
    
-        </div>
-    </div>
-    </div>
-</div>
-
-    <div class="secondContainer">
-
-    <div x-data="totalPhoneBillWidgets">
-          <h2>Total phone bill</h2>
-         <div>
-        <label for="usageFor"><b>please enter the usage</b></label>
-        <input type="text" x-model="usageFor" id="usageFor">
-         </div>
-        <div class="bill" x-text="bill">display the bill</div>
-    
-        <div>
-        <button @click="calculate">calculate total bill</button>
-        </div>
-    </div>
-  
-    <div><h2>Word game</h2>
-        <div class="wordGame">
-      <div x-data="longestWord_widget">
-          <h2>Longest Word</h2>
-          <div x-text="phrase">display longest word</div>
-          <div>
-          <label for="sentence"><b>What is the longest in the following sentence</b></label>
-          <input type="text" x-model="sentence" id="sentence">
-          <button @click="showWord"><b>Show longest word</b></button>
-          </div>
-        </div>
-    
-
-        <div x-data="shortestWord_widget">
-           <h2>Shortest Word</h2>
-           <div x-text="phrase">display longest word</div>
-           <div>
-           <label for="sentence2"><b>What is the shortest in the following sentence</b></label>
-           <input type="text" x-model="sentence2" id="sentence2">
-           <button @click="showWord"><b>Show shortest word</b></button>
-           </div>
-        </div>
-
-        <div x-data="wordLength_widget">
-           <h2>Word length</h2>
-           <div x-text="length">display the sentence length</div>
-           <div>
-           <lable for="sentenceLength"><b>How many words does the sentence have</b></lable>
-           <input type="text" model="sentenceLength" id="sentenceLength">
-           <button @click="calculate"><b>Show phrase length</b></button>
+        </div> -->
+                <div><input type="radio" id="workingShift" name="fav_language" value="morning" x-model="shift"
+                        @change="transportAmount">
+                      <label for="shift1">Morning</label><br>
+                      <input type="radio" id="css" name="fav_language" value="afternoon" x-model="shift"
+                        @change="transportAmount">
+                      <label for="shift2">Afternoon</label><br>
+                      <input type="radio" id="javascript" name="fav_language" value="nightshift" x-model="shift"
+                        @change="transportAmount">
+                      <label for=" shift3">Nightshift</label></div>
             </div>
         </div>
+    </div>
+
+    <div class="secondContainer">
+        <div class="totalPhoneBillWidgets">
+            <div x-data="totalPhoneBillWidgets">
+                <h2>Total phone bill</h2>
+                <div>
+                    <label for="usageFor"><b>please enter the usage</b></label>
+                    <input type="text" x-model="usageFor" id="usageFor">
+                </div>
+                <div class="bill" x-text="bill">display the bill</div>
+
+                <div>
+                    <button @click="calculate">calculate total bill</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="wordGames">
+            <h2>Word game</h2>
+            <div class="wordGame">
+                <div x-data="longestWord_widget">
+                    <h2>Longest Word</h2>
+                    <div x-text="phrase">display longest word</div>
+                    <div>
+                        <label for="sentence"><b>What is the longest in the following sentence</b></label>
+                        <input type="text" x-model="sentence" id="sentence">
+                        <button @click="showWord"><b>Show longest word</b></button>
+                    </div>
+                </div>
+
+
+                <div x-data="shortestWord_widget">
+                    <h2>Shortest Word</h2>
+                    <div x-text="phrase">display longest word</div>
+                    <div>
+                        <label for="sentence2"><b>What is the shortest in the following sentence</b></label>
+                        <input type="text" x-model="sentence2" id="sentence2">
+                        <button @click="showWord"><b>Show shortest word</b></button>
+                    </div>
+                </div>
+
+                <div x-data="wordLength_widget">
+                    <h2>Word length</h2>
+                    <div x-text="length">display the sentence length</div>
+                    <div>
+                        <lable for="sentenceLength"><b>How many words does the sentence have</b></lable>
+                        <input type="text" x-model="sentenceLength" id="sentenceLength">
+                        <button @click="calculate"><b>Show phrase length</b></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
 
-    </body>
+</body>
+
 </html>
